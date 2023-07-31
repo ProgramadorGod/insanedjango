@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>xd</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <p>
+        You're searching: <strong>{{query}}</strong>
+    </p>
+
+    {% if articles %}
+        <p> Articles found : {{articles|length}} articles</p>
+
+        <ul>
+            {% for article in articles %}
+            <li>
+                {{article.name}} &nbsp; {{article.section}} &nbsp; {{article.price}}   
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There's no articles found</p>
+    
+    {% endif %}
+
+
+</body>
+</html>
